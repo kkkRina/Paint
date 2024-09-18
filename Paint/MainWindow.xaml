@@ -1,0 +1,152 @@
+﻿<Window x:Class="Paint.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Paint" 
+        xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+        xmlns:dialog="clr-namespace:Egorozh.ColorPicker.Dialog;assembly=Egorozh.ColorPicker.WPF.Dialog"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Cursor="">
+    <Grid x:Name="pic">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height ="Auto"/>
+            <RowDefinition Height ="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ToolBar
+            Height="30" Grid.ColumnSpan="2" Background="LightSlateGray"
+        >
+            
+            <Button x:Name="OpenButton" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Open_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/unload.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="SaveButton" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Save_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/save2.png" Width="20" Height="20"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="PenButton" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Pensil_Click" Background="White">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/pencil.png" Width="20" Height="20"></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="InkPenButton" HorizontalAlignment="Left" VerticalAlignment="Top" Click="InkPen_Click" Background="White">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/ink_pen.png" Width="20" Height="20"></Image>
+                </StackPanel>
+            </Button>
+            <Label Content="    "/>
+            <Button x:Name="Erase" Background="White" Height="25" BorderBrush="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" Click="Erase_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources/erase.png" Width="20" Height="20"></Image>
+                </StackPanel>
+            </Button>
+
+
+            <Label Content="     "/>
+            <Button x:Name="line_" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Click="Line_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\line2.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="square_" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Click="Square_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\square.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="fillsquare_" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Click="FillSquare_Click" >
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\fillsquare2.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="ellipse_" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Click="Ellipse_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\ellipse3.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="fillellipse_" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White" Click="FillEllipse_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\ellipse2.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Label Content="     "/>
+            <Button x:Name="MainColor" Background="Black" BorderBrush="AliceBlue" Height="30" Width="30"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="MainColorButton"/>
+            <Button x:Name="DopColor" Background="White" BorderBrush="AliceBlue" Height="30" Width="30"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="DopColorButton"/>
+            <Label Content=" "/>
+            
+            <Button x:Name="White" Background="White" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center"  Click="WhiteButton"/>
+            <Button x:Name="Black" Background="Black" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="BlackButton"/>
+            <Button x:Name="Red" Background="Red" BorderBrush="AliceBlue" Height="20" Width="20" HorizontalAlignment="Left" VerticalAlignment="Center" Click="RedButton"/>
+            <Button x:Name="Green" Background="Green" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="GreenButton"/>
+            <Button x:Name="Blue" Background="Blue" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="BlueButton"/>
+            <Button x:Name="Yellow" Background="Yellow" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="YellowButton"/>
+            <Button x:Name="Orange" Background="Orange" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="OrangeButton"/>
+            <Button x:Name="Purple" Background="Purple" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="PurpleButton"/>
+            <Button x:Name="LightBlue" Background="LightSkyBlue" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="LightBlueButton"/>
+            <Button x:Name="Pink" Background="Pink" BorderBrush="AliceBlue" Height="20" Width="20"  HorizontalAlignment="Left" VerticalAlignment="Center" Click="PinkButton"/>
+
+            <Label Content=" "/>
+            
+
+            <dialog:ColorPickerButton 
+              VerticalAlignment="Center"
+              HorizontalAlignment="Center"
+              x:Name="ColorPickerButton"
+              Grid.Row="0"
+              Height="25"
+              Width="25"
+              Cursor="Hand" 
+              Color="Black">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+                        <Image Source="Resources/palette.png" Width="15" Height="15" VerticalAlignment="Center"/>
+                    </StackPanel>
+             </dialog:ColorPickerButton>
+            
+            <Label Content=" "/>
+            <Button x:Name="t1" HorizontalAlignment="Left" VerticalAlignment="Top" Click="t1_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\t1.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="t2" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="t2_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\t2.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="t3" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="t3_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\t3.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="t4" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="t4_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\t4.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+            <Button x:Name="t5" HorizontalAlignment="Left" VerticalAlignment="Top"  Click="t5_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="Resources\t5.png" Width="20" Height="20" ></Image>
+                </StackPanel>
+            </Button>
+        </ToolBar>
+        <InkCanvas 
+            x:Name="MainCanvas"
+            Grid.Row="2"
+            MouseDown="InkCanvas_MouseDown"
+            MouseUp="InkCanvas_MouseUp"
+            MouseMove="InkCanvas_MouseMove"
+            MouseRightButtonDown="MainCanvas_MouseRightButtonDown"
+            MouseRightButtonUp="MainCanvas_MouseRightButtonUp"
+            EditingMode="None" Grid.ColumnSpan="2" 
+        >
+            <InkCanvas.CacheMode>
+                <BitmapCache/>
+            </InkCanvas.CacheMode>
+        </InkCanvas>
+    </Grid>
+</Window>

@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Resources\ellipse.png" />
+		<None Remove="Resources\ellipse2.png" />
+		<None Remove="Resources\ellipse3.png" />
+		<None Remove="Resources\erase.png" />
+		<None Remove="Resources\fillsquare.png" />
+		<None Remove="Resources\fillsquare2.png" />
+		<None Remove="Resources\ink_pen.png" />
+		<None Remove="Resources\line.png" />
+		<None Remove="Resources\line2.png" />
+		<None Remove="Resources\palette.png" />
+		<None Remove="Resources\pencil.png" />
+		<None Remove="Resources\save.png" />
+		<None Remove="Resources\save2.png" />
+		<None Remove="Resources\square.png" />
+		<None Remove="Resources\t1.png" />
+		<None Remove="Resources\t2.png" />
+		<None Remove="Resources\t3.png" />
+		<None Remove="Resources\t4.png" />
+		<None Remove="Resources\t5.png" />
+		<None Remove="Resources\unload.png" />
+	</ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <PackageReference Include="Egorozh.ColorPicker.WPF.Dialog" Version="5.0.0" /> 
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\ellipse2.png" />
+    <Resource Include="Resources\ellipse3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\erase.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\fillsquare2.png" />
+    <Resource Include="Resources\ink_pen.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\line2.png" />
+    <Resource Include="Resources\palette.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\pencil.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\save2.png" />
+    <Resource Include="Resources\square.png" />
+    <Resource Include="Resources\t1.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\t2.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\t3.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\t4.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\t5.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\unload.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
